@@ -1,0 +1,148 @@
+- title: Basics
+  type: map
+  contents:
+    - name: Full Name
+      value: Sooraj Nhaloor
+    - name: Label
+      value: Physicist
+    - name: Email
+      value: soorajnhaloor123@gmail.com
+    - name: Phone
+      value: (+91) 9645532937
+    - name: Place
+      value: Kerala, India
+       
+
+- title: Education
+  type: time_table
+  contents:
+    - title: Master of Physics
+      institution: Indira Gandhi National Tribal University, India
+      year: 2023
+      description: 
+        - CGPA - 8.35/10.00
+
+    - title: Bachelore of Physics
+      institution: Majlis Arts and Science College, India
+      year: 2021
+      description:
+        - CGPA - 4.14/6.00
+        
+
+- title: Research Experience
+  type: time_table
+  contents:
+    - title: Investigation of Optical and Electrical Properties of Graphene Field Effect Transistor for the Application of Radiation Detection. 
+      institution: Indira Gandhi National tribal University
+      year: 2022 - 2023
+      description:
+        - Master's thesis
+        - Supervisor - Dr. Sheo Kumar Mishra
+    - title: Circuit Design and Analysis of Precision Rectifier - Characteristics and Applications
+      institution: Majlis Arts and Science College, India
+      year: 2021
+      description:
+        - Bachelor’s final year project 
+        - Supervisor - Mr. Muhammed Rafi
+
+
+- title: Work Experience
+  type: time_table
+  contents:
+    - title: Subject Matter Expert
+      year: 2024
+      description: Schoolhouse.world (Khan Academy)
+
+- title:  Skills
+  type: nested_list
+  contents:
+    - title: Programming Skills
+      items:
+        - C
+        - C++
+        - Phthon
+        - Linux Command Line
+    - title: Material Modelling & Simulation
+      items: 
+        - Comsol
+        - Ansys Lumerical
+        - Quantum Espresso
+    - title: Software Skills 
+      items:
+        - Scientific Writting - LaTeX
+        - Data Plotting - Orgin Pro
+        - CAD / CAM -  SolidWorks 
+        - ECAD - KiCad, Egale, Proteus
+        - Android Development - Flutter
+        - MS Office
+        - Git
+    - title: Technical Skills
+      items: 
+         - 3D printing (PLA, ABS)
+         - Arduino
+         - Raspberry pi /pico
+         - ESP series
+         - Spin Coating
+         - Ultrasonication
+         - UV-Vis Spectroscopy
+
+- title: Relevent Coursework
+  type: nested_list
+  contents:
+    - title:
+      items: 
+      - Material Science 
+      - Quantum Mechanics 
+      - Condensed matter physics
+      - Advanced Simulations
+      
+- title:  Workshops Attended
+  type: time_table
+  contents:
+    - title: Workshop on VLSI Design Using Verilog HDL
+    - year : Feb 2024
+      items:
+        - organized by Maven Silicon in collaboration with ASAP Kerala.
+        
+    - title: Workshop on Research Facility Training Program
+    - year : Feb 2023
+      items:
+        - organized by Department of Mathematics, IGNTU, India. Feb 2023
+        
+    - title: Workshop on Concepts and Applications of Computational Intelligence Techniques(CACIT - 2023)
+    - year : Feb 2023
+      items:
+        - organized by Department of Mathematics, IGNTU, India.
+                      
+    - title: Workshop on Multidisciplinary Approach to Understand the Mysteries of our Universe
+    - year : jul 2023
+      items:
+        - organized by the Department of Physics and Astronomy, NIT Rourkela, India.
+        
+    - title: Workshop on Introduction to Astronomy (Intro2Astro 2022)
+    - year : jun 2022
+      items:
+        - organized by Intro2Astro.
+        
+    - title: Workshop on ASTROSAT UVIT Galaxy Image Processing
+    - year : Nov 2022
+      items:
+        - organized by Department of Physics MES Mampad College, India.
+
+        
+- title:  Other Activities
+  type: nested_list
+  contents:
+    - title:
+      items: 
+
+        
+        - Worked as a member of Additional Skill Acquisition Program (ASAP)
+        - Mentored final year students in STEM research projects.
+        - Reviewed project documentation to ensure quality and adherence to academic standards.
+        - Conducted independent research in the development of sensors and IoT in agriculture automation.
+        - Developed android applications and physics based simulations.
+        - Proficiency in building, testing, and debugging circuits.
+        
+
+
