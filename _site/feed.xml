@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-03-19T20:46:21+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">blank</title><subtitle></subtitle><entry><title type="html">A little Bibiliography modifier</title><link href="http://localhost:4000/blog/2023/bibeditor/" rel="alternate" type="text/html" title="A little Bibiliography modifier" /><published>2023-12-15T20:39:00+05:30</published><updated>2023-12-15T20:39:00+05:30</updated><id>http://localhost:4000/blog/2023/bibeditor</id><content type="html" xml:base="http://localhost:4000/blog/2023/bibeditor/"><![CDATA[<p>Ah… now it’s time to add my <code class="language-plaintext highlighter-rouge">.bib</code> file to the LaTeX… Oops, why is the author name so long?<br />
+Have you ever had this situation? It happened to me when I compiled my thesis for the first time in LaTeX.<br /></p>
+
+<p>For my master’s thesis, I had to write a bibliography with over hundred citations. After generating the citations that I realized the bibliography alone took morethan ten pages, and yes even after reducing the font size to the smallest possible.<br /><br /></p>
+
+<p>So, what should I do now?
+<br /><br />
+I found out that the lengthiest part in the citations was the author names. Therefore, I decided to reduce them to two or three authors and manually add ‘et al.’ (which means “and others,” an abbreviation of the Latin term ‘et alia’).<br /> Phew… it was tedious to adjust all the hundreds of citations manually. So, I decided to write code in <code class="language-plaintext highlighter-rouge">C</code> to resolve the problem.<br /><br /></p>
+
+<p>It’s a simple code that reduces the authors to the given number and appends <code class="language-plaintext highlighter-rouge">et al.</code> to every list given a <code class="language-plaintext highlighter-rouge">.bib</code> file.</p>
+
+<h5 id="how-to"><b>HOW TO</b></h5>
+<hr />
+<ul>
+  <li>Compile the code using a C compiler <br /></li>
+  <li>Generate the excutable file (eg .exe) <br /></li>
+  <li>Place your .bib file in the same folder. <br /></li>
+  <li><b>IMPORTANT:  Rename your bib file to <code class="language-plaintext highlighter-rouge">ref.bib</code><br /></b></li>
+  <li>Run the program it will ask you for the number of maximum authors. Give what it asks!<br /></li>
+  <li>Press ENTER, and take a few deep breaths……..<br /></li>
+  <li>Your modified .bib will be generated as output.bib<br /></li>
+  <li>Verify for errors.<br /></li>
+</ul>
+
+<pre><code class="language-`">
+
+
+
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int maxauth;
+char *inputf = "ref.bib";      //  input bib file
+char *outputf = "output.bib";  // output bib file
+FILE *inputFile, *outputFile;
+char copyLine[565];
+char line[512];
+
+int main() {
+
+ printf("\n");
+    printf("                          Welcome to BibEditor                                \n");
+    printf("\n\n");
+
+    printf("BibEditor is an experimental program to limit the number of authors in the given .bib file.\n");
+    printf("The program will ask you for the number of authors you want to display and simply remove all other\n");
+    printf("authors and put an et.al at the tail. Simple :)\n\n");
+
+    printf("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n");
+    printf("        HOW TO USE\n");
+    printf("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n\n");
+
+    printf("1) Place your ref.bib file in the same folder.\n\n");
+
+    
+    printf("IMPORTANT: [ Rename it to \"ref.bib\" (without quotations) if your .bib file has a different name. ]\n\n");
+
+    printf("2) Run the program it will ask you for the number of maximum authors. Give what it asks! \n\n");
+
+    printf("3) Press ENTER, and take a few deep breaths ;)\n\n");
+
+    printf("4) Your modified .bib will be generated as output.bib\n\n");
+
+    printf("5) Verify for errors.\n\n");
+   
+    printf("   - Author: SOORAJ NHALOOR\n");
+    printf("   - Email: soorajnhaloor123@gmail.com\n");
+    printf("   - Website: nhaloorsooraj.github.io\n\n");
+
+    printf("════════════════════════════════════════════════════════════════════════════════\n");
+    printf("\n\n");
+    printf("\n\n");
+    printf("Enter the number of maximum authors : ");
+    scanf( "%d",&amp;maxauth);
+     printf("\n\n");
+    printf("\n\n");
+     printf("==============================================================================\n");
+     printf("======================  LOGS  ================================================\n");
+     printf("==============================================================================\n\n");
+    inputFile = fopen(inputf, "r");    
+    outputFile = fopen(outputf, "w");  
+
+    if (inputFile == NULL || outputFile == NULL) {
+        printf("Error opening files. Please read Readme.txt or see above ^\n");
+        return 1;
+    } else {
+        char pattern[] = "author = {";  
+        while (fgets(line, sizeof(line), inputFile)) {
+            if (strstr(line, pattern) != NULL) {
+                printf("Pattern found in this line: %s", line);
+                int commaCount = 0;
+                for (int i = 0; i &lt; strlen(line); i++) {
+                    if (line[i] == ',') {
+                        commaCount++;
+                        if (commaCount &gt;= maxauth) {
+                            copyLine[i] = line[i];
+                        line[i] = '\0';
+
+
+                            fprintf(outputFile, "%s %s et.al}\n",line,copyLine);
+                            break;
+                        } /////////////////
+                      
+                    }
+                }
+                if (commaCount &lt; maxauth) {
+                    fprintf(outputFile,"%s",line);
+                }
+            } else {
+                fprintf(outputFile, "%s", line);  // Write unmodified line to the output file
+            }
+        }
+
+        fclose(inputFile);
+        fclose(outputFile);
+    }
+
+    return 0;
+}
+
+</code></pre>
+<blockquote>
+  <p>You can see more here : <a href="https://github.com/nhaloorsooraj/BibEditor">https://github.com/nhaloorsooraj/BibEditor</a></p>
+</blockquote>]]></content><author><name></name></author><category term="C" /><category term="code" /><category term="bibiliography" /><summary type="html"><![CDATA[Sometimes long author names are hard to manage...]]></summary></entry></feed>
