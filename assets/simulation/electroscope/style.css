@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+}
+canvas {
+  background: #ffffff;
+  border: 5px solid #000;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.sbutton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  color: transparent; /* Make the text transparent */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  color: transparent;
+  overflow: hidden; /* Hide overflowing content */
+  background: url('assets/start.png') no-repeat center center/cover; /* Set background image */
+}
+
+.sbutton:active {
+  background-image:url("assets/start-active.png")/* Darker semi-transparent color wh"en active */
+}
