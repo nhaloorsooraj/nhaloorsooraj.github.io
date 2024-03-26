@@ -60,7 +60,7 @@
       items:
         - C
         - C++
-        - Phthon
+        - Python
         - Linux Command Line
     - title: Material Modelling & Simulation
       items: 
@@ -70,7 +70,7 @@
     - title: Software Skills 
       items:
         - Scientific Writting - LaTeX
-        - Data Plotting - Orgin Pro
+        - Data Plotting - Origin Pro
         - CAD / CAM -  SolidWorks 
         - ECAD - KiCad, Egale, Proteus
         - Android Development - Flutter
