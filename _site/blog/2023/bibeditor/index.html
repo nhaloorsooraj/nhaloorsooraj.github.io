@@ -143,6 +143,16 @@
             
           
             
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
               
                 <li class="nav-item ">
                   
@@ -294,102 +304,102 @@ I found out that the lengthiest part in the citations was the author names. Ther
 </li>
 </ul>
 
-<pre><code class="language-`">
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
 
 
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-int maxauth;
-char *inputf = "ref.bib";      //  input bib file
-char *outputf = "output.bib";  // output bib file
-FILE *inputFile, *outputFile;
-char copyLine[565];
-char line[512];
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="n">maxauth</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">inputf</span> <span class="o">=</span> <span class="s">"ref.bib"</span><span class="p">;</span>      <span class="c1">//  input bib file</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">outputf</span> <span class="o">=</span> <span class="s">"output.bib"</span><span class="p">;</span>  <span class="c1">// output bib file</span>
+<span class="kt">FILE</span> <span class="o">*</span><span class="n">inputFile</span><span class="p">,</span> <span class="o">*</span><span class="n">outputFile</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">copyLine</span><span class="p">[</span><span class="mi">565</span><span class="p">];</span>
+<span class="kt">char</span> <span class="n">line</span><span class="p">[</span><span class="mi">512</span><span class="p">];</span>
 
-int main() {
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 
- printf("\n");
-    printf("                          Welcome to BibEditor                                \n");
-    printf("\n\n");
+ <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"                          Welcome to BibEditor                                </span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
 
-    printf("BibEditor is an experimental program to limit the number of authors in the given .bib file.\n");
-    printf("The program will ask you for the number of authors you want to display and simply remove all other\n");
-    printf("authors and put an et.al at the tail. Simple :)\n\n");
+    <span class="n">printf</span><span class="p">(</span><span class="s">"BibEditor is an experimental program to limit the number of authors in the given .bib file.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"The program will ask you for the number of authors you want to display and simply remove all other</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"authors and put an et.al at the tail. Simple :)</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
 
-    printf("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n");
-    printf("        HOW TO USE\n");
-    printf("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\n\n");
+    <span class="n">printf</span><span class="p">(</span><span class="s">"¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"        HOW TO USE</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
 
-    printf("1) Place your ref.bib file in the same folder.\n\n");
+    <span class="n">printf</span><span class="p">(</span><span class="s">"1) Place your ref.bib file in the same folder.</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
 
     
-    printf("IMPORTANT: [ Rename it to \"ref.bib\" (without quotations) if your .bib file has a different name. ]\n\n");
+    <span class="n">printf</span><span class="p">(</span><span class="s">"IMPORTANT: [ Rename it to </span><span class="se">\"</span><span class="s">ref.bib</span><span class="se">\"</span><span class="s"> (without quotations) if your .bib file has a different name. ]</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
 
-    printf("2) Run the program it will ask you for the number of maximum authors. Give what it asks! \n\n");
+    <span class="n">printf</span><span class="p">(</span><span class="s">"2) Run the program it will ask you for the number of maximum authors. Give what it asks! </span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
 
-    printf("3) Press ENTER, and take a few deep breaths ;)\n\n");
+    <span class="n">printf</span><span class="p">(</span><span class="s">"3) Press ENTER, and take a few deep breaths ;)</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
 
-    printf("4) Your modified .bib will be generated as output.bib\n\n");
+    <span class="n">printf</span><span class="p">(</span><span class="s">"4) Your modified .bib will be generated as output.bib</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
 
-    printf("5) Verify for errors.\n\n");
+    <span class="n">printf</span><span class="p">(</span><span class="s">"5) Verify for errors.</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
    
-    printf("   - Author: SOORAJ NHALOOR\n");
-    printf("   - Email: soorajnhaloor123@gmail.com\n");
-    printf("   - Website: nhaloorsooraj.github.io\n\n");
+    <span class="n">printf</span><span class="p">(</span><span class="s">"   - Author: SOORAJ NHALOOR</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"   - Email: soorajnhaloor123@gmail.com</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"   - Website: nhaloorsooraj.github.io</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
 
-    printf("════════════════════════════════════════════════════════════════════════════════\n");
-    printf("\n\n");
-    printf("\n\n");
-    printf("Enter the number of maximum authors : ");
-    scanf( "%d",&amp;maxauth);
-     printf("\n\n");
-    printf("\n\n");
-     printf("==============================================================================\n");
-     printf("======================  LOGS  ================================================\n");
-     printf("==============================================================================\n\n");
-    inputFile = fopen(inputf, "r");    
-    outputFile = fopen(outputf, "w");  
+    <span class="n">printf</span><span class="p">(</span><span class="s">"════════════════════════════════════════════════════════════════════════════════</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Enter the number of maximum authors : "</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span> <span class="s">"%d"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">maxauth</span><span class="p">);</span>
+     <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
+     <span class="n">printf</span><span class="p">(</span><span class="s">"==============================================================================</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+     <span class="n">printf</span><span class="p">(</span><span class="s">"======================  LOGS  ================================================</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+     <span class="n">printf</span><span class="p">(</span><span class="s">"==============================================================================</span><span class="se">\n\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">inputFile</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">inputf</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>    
+    <span class="n">outputFile</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">outputf</span><span class="p">,</span> <span class="s">"w"</span><span class="p">);</span>  
 
-    if (inputFile == NULL || outputFile == NULL) {
-        printf("Error opening files. Please read Readme.txt or see above ^\n");
-        return 1;
-    } else {
-        char pattern[] = "author = {";  
-        while (fgets(line, sizeof(line), inputFile)) {
-            if (strstr(line, pattern) != NULL) {
-                printf("Pattern found in this line: %s", line);
-                int commaCount = 0;
-                for (int i = 0; i &lt; strlen(line); i++) {
-                    if (line[i] == ',') {
-                        commaCount++;
-                        if (commaCount &gt;= maxauth) {
-                            copyLine[i] = line[i];
-                        line[i] = '\0';
+    <span class="k">if</span> <span class="p">(</span><span class="n">inputFile</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="o">||</span> <span class="n">outputFile</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"Error opening files. Please read Readme.txt or see above ^</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="kt">char</span> <span class="n">pattern</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"author = {"</span><span class="p">;</span>  
+        <span class="k">while</span> <span class="p">(</span><span class="n">fgets</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">line</span><span class="p">),</span> <span class="n">inputFile</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">strstr</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">"Pattern found in this line: %s"</span><span class="p">,</span> <span class="n">line</span><span class="p">);</span>
+                <span class="kt">int</span> <span class="n">commaCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">strlen</span><span class="p">(</span><span class="n">line</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">','</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="n">commaCount</span><span class="o">++</span><span class="p">;</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">commaCount</span> <span class="o">&gt;=</span> <span class="n">maxauth</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="n">copyLine</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+                        <span class="n">line</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'\0'</span><span class="p">;</span>
 
 
-                            fprintf(outputFile, "%s %s et.al}\n",line,copyLine);
-                            break;
-                        } /////////////////
+                            <span class="n">fprintf</span><span class="p">(</span><span class="n">outputFile</span><span class="p">,</span> <span class="s">"%s %s et.al}</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">line</span><span class="p">,</span><span class="n">copyLine</span><span class="p">);</span>
+                            <span class="k">break</span><span class="p">;</span>
+                        <span class="p">}</span> <span class="c1">/////////////////</span>
                       
-                    }
-                }
-                if (commaCount &lt; maxauth) {
-                    fprintf(outputFile,"%s",line);
-                }
-            } else {
-                fprintf(outputFile, "%s", line);  // Write unmodified line to the output file
-            }
-        }
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">commaCount</span> <span class="o">&lt;</span> <span class="n">maxauth</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">fprintf</span><span class="p">(</span><span class="n">outputFile</span><span class="p">,</span><span class="s">"%s"</span><span class="p">,</span><span class="n">line</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">fprintf</span><span class="p">(</span><span class="n">outputFile</span><span class="p">,</span> <span class="s">"%s"</span><span class="p">,</span> <span class="n">line</span><span class="p">);</span>  <span class="c1">// Write unmodified line to the output file</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 
-        fclose(inputFile);
-        fclose(outputFile);
-    }
+        <span class="n">fclose</span><span class="p">(</span><span class="n">inputFile</span><span class="p">);</span>
+        <span class="n">fclose</span><span class="p">(</span><span class="n">outputFile</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    return 0;
-}
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-</code></pre>
+</code></pre></div></div>
 <blockquote>
   <p>You can see more here : <a href="https://github.com/nhaloorsooraj/BibEditor" rel="external nofollow noopener" target="_blank">https://github.com/nhaloorsooraj/BibEditor</a></p>
 </blockquote>
@@ -403,6 +413,46 @@ int main() {
   
     
       
+
+  
+    
+    <br>
+    <hr>
+    <br>
+    <ul class="list-disc pl-8"></ul>
+
+    <!-- Adds related posts to the end of an article -->
+    <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2>
+    <p class="mb-2">Here are some more articles you might like to read next:</p>
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/bibeditor/">A little Bibiliography modifier</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/tables/">displaying beautiful tables with Bootstrap Tables</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/simplependulum/">Animating a Simple Pendulum with Manim</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/sidebar-table-of-contents/">a post with table of contents on a sidebar</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/videos/">a post with videos</a>
+  </li>
 
 
     

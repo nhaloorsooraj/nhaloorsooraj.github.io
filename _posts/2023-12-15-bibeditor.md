@@ -35,7 +35,7 @@ It's a simple code that reduces the authors to the given number and appends `et 
 
 
 
-````
+```c
 
 
 
