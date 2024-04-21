@@ -2,7 +2,7 @@
 layout: page
 permalink: /teachings/
 title: teachings
-display_categories: [Youtube lectures, Courses]
+display_categories: [Youtube, Courses, Shorts]
 description: Some of my teachings and presentations.
 nav: true
 nav_order: 6
