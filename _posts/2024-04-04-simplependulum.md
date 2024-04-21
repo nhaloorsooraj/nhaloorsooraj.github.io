@@ -14,7 +14,7 @@ In this post, we'll explore how to create a basic animation of a simple pendulum
 ## Setting up Manim
 ### <span style="color:#5e940e"> Manim playground </span>
 
- Setting up manim simple. While local installation is recommended for full functionality, but if you want to play around with manim you can check out their in-browser interactive manim playground without local installation on [https://try.manim.community/](https://try.manim.community/). \\
+ Setting up manim is simple. While local installation is recommended for full functionality, but if you want to play around with manim you can check out their in-browser interactive manim playground without local installation on [https://try.manim.community/](https://try.manim.community/). \\
 You will provided with a jupyter notebook where you can add your python codes to test and play with Manim.
  
 
@@ -85,7 +85,7 @@ You can install Manim locally , all you need is a decent code editor. I prefer u
 
 open the VS Code and create a file named pendulum.py 
 
-The first step is to import the necessary libraries `manim` and `numpy`. numpy is a numerical python package which is needed for calculations like finsing cosine angle `cos` , squre-root `sqrt()` etc. the next step is todefine the frame size for our animation which is not mandatory. Here I have chosen a potrait frame of size `1080 X 1920`. If we do not choose the frame size then the output will be in the default 1920 x 1080.
+The first step is to import the necessary libraries, `manim` and `numpy`. NumPy is a numerical python package which is needed for calculations like finding cosine angle `cos` , squre-root `sqrt()` etc. the next step is to define the frame size for our animation which is not mandatory. Here I have chosen a potrait frame of size `1080 X 1920`. If we do not choose the frame size then the output will be in the default 1920 x 1080.
 
 ```python
 from manim import *
@@ -105,7 +105,7 @@ class Scene_1(Scene):
 > Please do care about the spaces in the second line, Python is an intened language. Each line of code within a block must be indented by the same number of spaces or tabs.
 {: .block-tip }
 
-Now we can create our pendulum. We can start by creating a pendulum stand. For that first we need to create a `Line()`  named lineA which is starting from 8 units above the oringin (center of the frame) to 4 units below. We can color the line blue color. We can set it to behind the scene plane by changing its `z_index` in the same way create another small blue line for the hook and and a blue`Rectangle()` named rect. Group the components with `VGroup()` name it as stand.
+Now we can create our pendulum. We can start by creating a pendulum stand. For that first we need to create a `Line()`  named lineA which starts from 8 units above the oringin (center of the frame) to 4 units below. We can color the line blue color. We can set it to behind the scene plane by changing its `z_index` in the same way create another small blue line for the hook and and a blue`Rectangle()` named rect. Group the components with `VGroup()` name it as stand.
 
 ``` python
         lineA = Line(start=UP*8,end=DOWN*4)

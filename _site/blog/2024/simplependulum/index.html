@@ -52,7 +52,7 @@
 
 <!-- Styles -->
 
-  <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%92%A1&lt;/text&gt;&lt;/svg&gt;">
+  <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%8E%93&lt;/text&gt;&lt;/svg&gt;">
 
 <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
 <link rel="canonical" href="http://localhost:4000/blog/2024/simplependulum/">
@@ -288,7 +288,7 @@
 <h2 id="setting-up-manim">Setting up Manim</h2>
 <h3 id="-manim-playground-"><span style="color:#5e940e"> Manim playground </span></h3>
 
-<p>Setting up manim simple. While local installation is recommended for full functionality, but if you want to play around with manim you can check out their in-browser interactive manim playground without local installation on <a href="https://try.manim.community/" rel="external nofollow noopener" target="_blank">https://try.manim.community/</a>. <br>
+<p>Setting up manim is simple. While local installation is recommended for full functionality, but if you want to play around with manim you can check out their in-browser interactive manim playground without local installation on <a href="https://try.manim.community/" rel="external nofollow noopener" target="_blank">https://try.manim.community/</a>. <br>
 You will provided with a jupyter notebook where you can add your python codes to test and play with Manim.</p>
 
 <h3 id="-local-installation-"><span style="color:#5e940e"> Local installation </span></h3>
@@ -370,7 +370,7 @@ You will provided with a jupyter notebook where you can add your python codes to
 
 <p>open the VS Code and create a file named pendulum.py</p>
 
-<p>The first step is to import the necessary libraries <code class="language-plaintext highlighter-rouge">manim</code> and <code class="language-plaintext highlighter-rouge">numpy</code>. numpy is a numerical python package which is needed for calculations like finsing cosine angle <code class="language-plaintext highlighter-rouge">cos</code> , squre-root <code class="language-plaintext highlighter-rouge">sqrt()</code> etc. the next step is todefine the frame size for our animation which is not mandatory. Here I have chosen a potrait frame of size <code class="language-plaintext highlighter-rouge">1080 X 1920</code>. If we do not choose the frame size then the output will be in the default 1920 x 1080.</p>
+<p>The first step is to import the necessary libraries, <code class="language-plaintext highlighter-rouge">manim</code> and <code class="language-plaintext highlighter-rouge">numpy</code>. NumPy is a numerical python package which is needed for calculations like finding cosine angle <code class="language-plaintext highlighter-rouge">cos</code> , squre-root <code class="language-plaintext highlighter-rouge">sqrt()</code> etc. the next step is to define the frame size for our animation which is not mandatory. Here I have chosen a potrait frame of size <code class="language-plaintext highlighter-rouge">1080 X 1920</code>. If we do not choose the frame size then the output will be in the default 1920 x 1080.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">manim</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
@@ -389,7 +389,7 @@ You will provided with a jupyter notebook where you can add your python codes to
   <p>Please do care about the spaces in the second line, Python is an intened language. Each line of code within a block must be indented by the same number of spaces or tabs.</p>
 </blockquote>
 
-<p>Now we can create our pendulum. We can start by creating a pendulum stand. For that first we need to create a <code class="language-plaintext highlighter-rouge">Line()</code>  named lineA which is starting from 8 units above the oringin (center of the frame) to 4 units below. We can color the line blue color. We can set it to behind the scene plane by changing its <code class="language-plaintext highlighter-rouge">z_index</code> in the same way create another small blue line for the hook and and a blue<code class="language-plaintext highlighter-rouge">Rectangle()</code> named rect. Group the components with <code class="language-plaintext highlighter-rouge">VGroup()</code> name it as stand.</p>
+<p>Now we can create our pendulum. We can start by creating a pendulum stand. For that first we need to create a <code class="language-plaintext highlighter-rouge">Line()</code>  named lineA which starts from 8 units above the oringin (center of the frame) to 4 units below. We can color the line blue color. We can set it to behind the scene plane by changing its <code class="language-plaintext highlighter-rouge">z_index</code> in the same way create another small blue line for the hook and and a blue<code class="language-plaintext highlighter-rouge">Rectangle()</code> named rect. Group the components with <code class="language-plaintext highlighter-rouge">VGroup()</code> name it as stand.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">lineA</span> <span class="o">=</span> <span class="nc">Line</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">UP</span><span class="o">*</span><span class="mi">8</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="n">DOWN</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
         <span class="n">lineA</span><span class="p">.</span><span class="nf">set_color</span><span class="p">(</span><span class="n">BLUE</span><span class="p">)</span>
@@ -609,31 +609,13 @@ Where \(\theta_o\) is the maximum angle, \(w\) is the anguar frequancy (\(w=\sqr
   
 
   <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/simplependulum/">Animating a Simple Pendulum with Manim</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/tables/">displaying beautiful tables with Bootstrap Tables</a>
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/simplependulum/">Animate a Simple Pendulum with Manim</a>
   </li>
 
   
 
   <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/bibeditor/">A little Bibiliography modifier</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/videos/">a post with videos</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/audios/">a post with audios</a>
   </li>
 
 
