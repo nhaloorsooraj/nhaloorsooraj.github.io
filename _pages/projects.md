@@ -1,11 +1,11 @@
 ---
 layout: page
-title: projects
+title: portfolio
 permalink: /projects/
-description: These are some projects I have done.
+description: Looks like our projects are still in the lab being perfected. Check back soon for some exciting updates! 
 nav: true
 nav_order: 3
-display_categories: [Ongoing, Completed]
+display_categories: [Projects]
 horizontal: false
 ---
 

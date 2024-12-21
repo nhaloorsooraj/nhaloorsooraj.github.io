@@ -102,7 +102,7 @@ class Scene_1(Scene):
      def construct(self):
 ```
 
-> Please do care about the spaces in the second line, Python is an intened language. Each line of code within a block must be indented by the same number of spaces or tabs.
+> Please do care about the spaces in the second line, Python is an indented language. Each line of code within a block must be indented by the same number of spaces or tabs.
 {: .block-tip }
 
 Now we can create our pendulum. We can start by creating a pendulum stand. For that first we need to create a `Line()`  named lineA which starts from 8 units above the oringin (center of the frame) to 4 units below. We can color the line blue color. We can set it to behind the scene plane by changing its `z_index` in the same way create another small blue line for the hook and and a blue`Rectangle()` named rect. Group the components with `VGroup()` name it as stand.

@@ -1,10 +1,10 @@
 ---
 layout: page
 permalink: /teachings/
-title: teachings
-display_categories: [Youtube, Courses, Shorts]
-description: Some of my teachings and presentations.
-nav: true
+title: explore
+display_categories: [Youtube, Shorts, Courses]
+description: If you are free and curious, feel free to peek into these contents
+nav : true
 nav_order: 6
 ---
 
