@@ -1,0 +1,6 @@
+excute locally
+===> bundle exec jekyll serve
+
+edit cv
+
+==> /_data/cv.yml
