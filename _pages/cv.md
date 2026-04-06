@@ -7,5 +7,5 @@ nav_order: 5
 cv_pdf: cv_soorajnhaloor.pdfx
 description: My resumé is not all lies. My name is correct !
 toc:
-  sidebar: 
+  sidebar: none
 ---
