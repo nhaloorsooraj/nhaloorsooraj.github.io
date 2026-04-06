@@ -24,8 +24,8 @@ social: false # includes social icons at the bottom of the page
 ---
 
 
-<p style="text-align:justify;">Welcome to my academic profile. I am <b>Sooraj Nhaloor</b>, a doctoral student specializing in design and simulation of III-Nitride micro-LEDs.<br><br>
-My research focuses on understanding the lateral carrier transport in Gallium Nitride based micro-LEDs. <br><br>
+<p style="text-align:justify;">Welcome to my academic profile. I am <b>Sooraj Nhaloor</b>, a doctoral student specializing in design and simulation of III-Nitride micro-LEDs.<br>
+My research focuses on understanding the lateral carrier transport in Gallium Nitride based micro-LEDs.
 I conduct computational simulations to explore how carrier transport work on these devices. Beyond simulation, my work spans optical characterization, fabrication mask designs and experimental-simulation reconciliation.<br><br>
 Beyond research, I love to communicate science in ways that are not just rigorous, but genuinely beautiful.
 
